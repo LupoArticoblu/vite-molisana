@@ -30,9 +30,13 @@ export default {
 @use '../Style/partials/variabili' as *;
 
 header {
+  margin-bottom: 50px;
   text-align: center;
-  img {
-    width: 200px;
+  .logo{
+    margin-bottom: 50px;
+    img {
+      width: 200px;
+    }
   }
   ul{
     list-style: none;
@@ -46,7 +50,7 @@ header {
       &:hover, 
       &:focus {
         // con scss abbiamo anche una peculiarità, con lighten e darken partendo da un colore x possiamo dargli delle percentuali per renderlo più luminoso o meno
-        background-color: lighten($primary-color, 70%);
+        background-color: lighten($primary-color, 69%);
       }
     }
   }

@@ -1,5 +1,8 @@
 <template>
-  <main>Sono main</main>
+  <span>Sono main</span>
+  <main>
+
+  </main>
 </template>
 
 <script>
@@ -8,6 +11,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+  main{
+    padding: 50px 0;
+    background-image: url('../assets/grano.webp');
+    min-height: 500px;
+  }
 </style>
