@@ -8,10 +8,9 @@
 
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Prodotti</a></li>
-        <li><a href="#">Chi siamo</a></li>
-        <li><a href="#">Contatti</a></li>
+        <!-- BISOGNA SEMPRE FARE IL BINDING DELLA KEY UNIQUE-->
+        <li v-for="(link, index) in menu" :key="index"><a  :href="link.link">{{ link.name }}</a></li>
+        
       </ul>
     </nav>
   </header>
@@ -20,6 +19,33 @@
 <script>
 export default {
   name: 'header',
+  data() {
+    return {
+     //cicliamo il menù
+      menu: [
+        {
+          name: 'Home',
+          link: '#',
+          current: true
+        },
+        {
+          name: 'Prodotti',
+          link: '#',
+          current: false
+        },
+        {
+          name: 'Chi siamo',
+          link: '#',
+          current: false
+        },
+        {
+          name: 'Contatti',
+          link: '#',
+          current: false
+        }
+      ] 
+    }
+  }
 }
 </script>
 
