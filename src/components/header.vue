@@ -1,6 +1,7 @@
 <template>
-  <span>Sono header</span>
   <header>
+    <!--  INTRODUCIAMO LE PROPS: il concetto di props è quello che un informazione deve esser passara dinamicamente ma dal tag/componente padre (per vederlo passiamo in APP.vue)-->
+    <span>{{ saluto }}</span>
     <div class="logo">
       <!-- percorso assoluto perchè l'immagine è in public-->
       <img src="/public/Logo.png" alt="">  
@@ -19,31 +20,18 @@
 <script>
 export default {
   name: 'header',
+  //nello script inseriamo props, le props possono essere di qualsiasi tipo e dimensione
+  props: {
+    //key : value (imposto l'elemento figlio a ricevere il dato) QUINDI DEFINIAMO NEL COMPONENTE PADRE(HEADER) IL DATO CHE VOGLIAMO TRASMETTERE...(CONTINUA IN aPP.vue)
+    saluto : String,
+    //inseriamo il menu
+    menu: Array
+  },
+  //ATTENZIONE LE PROPS SONO READONLY:qundi non posso modificarle
+  //created() { this.saluto = 'nuovo testo'} <- questo tornerebbe un errore
   data() {
     return {
-     //cicliamo il menù
-      menu: [
-        {
-          name: 'Home',
-          link: '#',
-          current: true
-        },
-        {
-          name: 'Prodotti',
-          link: '#',
-          current: false
-        },
-        {
-          name: 'Chi siamo',
-          link: '#',
-          current: false
-        },
-        {
-          name: 'Contatti',
-          link: '#',
-          current: false
-        }
-      ] 
+     
     }
   }
 }

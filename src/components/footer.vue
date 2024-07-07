@@ -50,6 +50,7 @@ export default {
   },
   methods: {
     getImg(imgName) {
+      //ATTENZIONE QUESTA FORMULA PERMETTE DI CREARE UNA URL DINAMICA OER INSERIRE IMMAGINI
       return new URL(`../assets/${imgName}`, import.meta.url).href
     },
   },
