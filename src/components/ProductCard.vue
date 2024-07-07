@@ -6,6 +6,7 @@
 </template>
 
 <script>
+//export, è la parola chiave per fare l'import dall'esterno di altri js
 export default {
   name: 'ProductCard',
   props: {

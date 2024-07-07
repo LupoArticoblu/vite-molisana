@@ -6,6 +6,15 @@
         <img src="/public/Logo.png" alt="">
       </div>
       <div class="links">
+        <h4>Menù</h4>
+        <nav>
+          <ul>
+            <!-- centralizzando le informazioni nel file menù posso riutilizzarle ovunque nei componenti-->
+            <li v-for="(link, index) in menu" :key="index"><a :href="link.link">{{ link.name }}</a></li>
+          </ul>
+        </nav>
+      </div>    
+      <div class="links">
         <h4>Pastificio</h4>
         <nav>
           <ul>
@@ -41,11 +50,14 @@
 </template>
 
 <script>
+import menu from '../data/menu';
+
 export default {
   name: 'footer',
   data() {
     return {
-      footerImg: 'footer.jpg' 
+      footerImg: 'footer.jpg',
+      menu 
     }
   },
   methods: {
