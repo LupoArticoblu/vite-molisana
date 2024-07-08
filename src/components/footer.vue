@@ -46,18 +46,21 @@
       <!-- percorso dinamico -->
       <img :src="getImg(footerImg)" alt="">
     </div>
+    <button @click="store.count++" style="background-color: #adb210"> incrementa il contatore store esportato in App.vue</button>
   </footer>
 </template>
 
 <script>
 import menu from '../data/menu';
-
+//importo store
+import { store } from '../data/store';
 export default {
   name: 'footer',
   data() {
     return {
       footerImg: 'footer.jpg',
-      menu 
+      menu,
+      store
     }
   },
   methods: {

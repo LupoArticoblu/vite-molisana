@@ -13,10 +13,14 @@
   <!-- test data js-->
   <h5>{{ code }} <span>ecco il codice importato da data</span></h5>
   <h5>{{ getRandomNumber(1,40) }} <span>ecco il numero della funzione random importata da data</span></h5>
+  <div class="container">
+      <p>contatore: {{ store.count }}</p>
+    </div>
 </template>
 
 <script>
-
+//importo store
+import { store } from './data/store';
 //importiamo alcuni dati da data js <- se il file da importare non ha "export default" importo tra le graffe gli elementi che mi servono
 import {code, getRandomNumber} from './data/data';
 //importo il js colori <- se il file da importare ha "export default" il nome attributo è arbitrario
@@ -31,7 +35,7 @@ export default {
   name: 'App',
   data() {
     return {
-
+      store,
       //richiamo nei data il js colori
       color,
       //richiamo ciò che ho importato da data js
@@ -41,6 +45,9 @@ export default {
       //cicliamo il menù (in app.vue per dimostrare l'utilità delle props) ATTENZIONE: LE PROPS CHE PASSO TRAMITE DATA VANNO INSERITE NEI TAG COL BINDING
       menu 
     }
+  },
+  mounted(){
+    //metodi
   },
   components: {
     //2 richiamiamoli come proprietà di un oggetto(components) 
